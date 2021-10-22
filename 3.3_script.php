@@ -1,0 +1,38 @@
+<?php
+    require 'connection.php';
+    $PhDs_Registered=$_POST['eligible'];
+    $PhDs_Registered= mysqli_real_escape_string($conn,$PhDs_Registered);
+    $Eligible_teacher=$_POST['eligible1'];
+    $Eligible_teacher= mysqli_real_escape_string($conn,$Eligible_teacher);
+    $Guides=$_POST['guides'];
+    $Guides= mysqli_real_escape_string($conn,$Guides);
+    $url=$_POST['url'];
+    $url= mysqli_real_escape_string($conn,$url);
+    $Research_paper=$_POST['researchpaper'];
+    $Research_paper= mysqli_real_escape_string($conn,$Research_paper);
+    $Research_paper_2019=$_POST['num_1'];
+    $Research_paper_2019= mysqli_real_escape_string($conn,$Research_paper_2019);
+    $Research_paper_2018=$_POST['num_2'];
+    $Research_paper_2018= mysqli_real_escape_string($conn,$Research_paper_2018);
+    $Research_paper_2017=$_POST['num_3'];
+    $Research_paper_2017= mysqli_real_escape_string($conn,$Research_paper_2017);
+    $Research_paper_2016=$_POST['num_4'];
+    $Research_paper_2016= mysqli_real_escape_string($conn,$Research_paper_2016);
+    $Research_paper_2015=$_POST['num_5'];
+    $Research_paper_2015= mysqli_real_escape_string($conn,$Research_paper_2015);
+    $list_research=$_POST['numberofbooks'];
+    $list_research= mysqli_real_escape_string($conn,$list_research);
+    $list_research_2019=$_POST['num_6'];
+    $list_research_2019= mysqli_real_escape_string($conn,$list_research_2019);
+    $list_research_2018=$_POST['num_7'];
+    $list_research_2018= mysqli_real_escape_string($conn,$list_research_2018);
+    $list_research_2017=$_POST['num_8'];
+    $list_research_2017= mysqli_real_escape_string($conn,$list_research_2017);
+    $list_research_2016=$_POST['num_9'];
+    $list_research_2016= mysqli_real_escape_string($conn,$list_research_2016);
+    $list_research_2015=$_POST['num_10'];
+    $list_research_2015= mysqli_real_escape_string($conn,$list_research_2015);
+    $query="INSERT INTO three(PhDs_Registered,Eligible_teacher,Guides,url,Research_paper,Research_paper_2019,Research_paper_2018,Research_paper_2017,Research_paper_2016,Research_paper_2015,list_research,list_research_2019,list_research_2018,list_research_2017,list_research_2016,list_research_2015)VALUES('$PhDs_Registered','$Eligible_teacher','$Guides','$url','$Research_paper','$Research_paper_2019','$Research_paper_2018','$Research_paper_2017','$Research_paper_2016','$Research_paper_2015','$list_research','$list_research_2019','$list_research_2018','$list_research_2017','$list_research_2016','$list_research_2015')";
+    $result=mysqli_query($conn, $query) or die (mysqli_error($conn));
+    header("location: 3.4.php");
+?>

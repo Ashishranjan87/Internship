@@ -1,0 +1,30 @@
+<?php
+    require 'connection.php';
+    $Collaborative_activities=$_POST['collaborative'];
+    $Collaborative_activities= mysqli_real_escape_string($conn,$Collaborative_activities);
+    $Collaborative_activities_2019=$_POST['num_1'];
+    $Collaborative_activities_2019= mysqli_real_escape_string($conn,$Collaborative_activities_2019);
+    $Collaborative_activities_2018=$_POST['num_2'];
+    $Collaborative_activities_2018= mysqli_real_escape_string($conn,$Collaborative_activities_2018);
+    $Collaborative_activities_2017=$_POST['num_3'];
+    $Collaborative_activities_2017= mysqli_real_escape_string($conn,$Collaborative_activities_2017);
+    $Collaborative_activities_2016=$_POST['num_4'];
+    $Collaborative_activities_2016= mysqli_real_escape_string($conn,$Collaborative_activities_2016);
+    $Collaborative_activities_2015=$_POST['num_5'];
+    $Collaborative_activities_2015= mysqli_real_escape_string($conn,$Collaborative_activities_2015);
+    $Functional_MoUs=$_POST['collaborative1'];
+    $Functional_MoUs= mysqli_real_escape_string($conn,$Functional_MoUs);
+    $Functional_MoUs_2019=$_POST['num_6'];
+    $Functional_MoUs_2019= mysqli_real_escape_string($conn,$Functional_MoUs_2019);
+    $Functional_MoUs_2018=$_POST['num_7'];
+    $Functional_MoUs_2018= mysqli_real_escape_string($conn,$Functional_MoUs_2018);
+    $Functional_MoUs_2017=$_POST['num_8'];
+    $Functional_MoUs_2017= mysqli_real_escape_string($conn,$Functional_MoUs_2017);
+    $Functional_MoUs_2016=$_POST['num_9'];
+    $Functional_MoUs_2016= mysqli_real_escape_string($conn,$Functional_MoUs_2016);
+    $Functional_MoUs_2015=$_POST['num_10'];
+    $Functional_MoUs_2015= mysqli_real_escape_string($conn,$Functional_MoUs_2015);
+    $query="INSERT INTO five(Collaborative_activities,Collaborative_activities_2019,Collaborative_activities_2018,Collaborative_activities_2017,Collaborative_activities_2016,Collaborative_activities_2015,Functional_MoUs,Functional_MoUs_2019,Functional_MoUs_2018,Functional_MoUs_2017,Functional_MoUs_2016,Functional_MoUs_2015)VALUES('$Collaborative_activities','$Collaborative_activities_2019','$Collaborative_activities_2018','$Collaborative_activities_2017','$Collaborative_activities_2016','$Collaborative_activities_2015','$Functional_MoUs','$Functional_MoUs_2019','$Functional_MoUs_2018','$Functional_MoUs_2017','$Functional_MoUs_2016','$Functional_MoUs_2015')";
+    $result=mysqli_query($conn, $query) or die (mysqli_error($conn));
+    header("location: 3.5.php");
+?>
